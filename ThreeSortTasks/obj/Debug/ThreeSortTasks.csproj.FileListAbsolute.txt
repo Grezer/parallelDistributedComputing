@@ -1,0 +1,10 @@
+C:\Users\pc\Desktop\Учёба\ПРВ\PDC\ThreeSortTasks\obj\Debug\ThreeSortTasks.csprojAssemblyReference.cache
+C:\Users\pc\Desktop\Учёба\ПРВ\PDC\ThreeSortTasks\obj\Debug\ThreeSortTasks.Form1.resources
+C:\Users\pc\Desktop\Учёба\ПРВ\PDC\ThreeSortTasks\obj\Debug\ThreeSortTasks.Properties.Resources.resources
+C:\Users\pc\Desktop\Учёба\ПРВ\PDC\ThreeSortTasks\obj\Debug\ThreeSortTasks.csproj.GenerateResource.cache
+C:\Users\pc\Desktop\Учёба\ПРВ\PDC\ThreeSortTasks\obj\Debug\ThreeSortTasks.csproj.CoreCompileInputs.cache
+C:\Users\pc\Desktop\Учёба\ПРВ\PDC\ThreeSortTasks\bin\Debug\ThreeSortTasks.exe.config
+C:\Users\pc\Desktop\Учёба\ПРВ\PDC\ThreeSortTasks\bin\Debug\ThreeSortTasks.exe
+C:\Users\pc\Desktop\Учёба\ПРВ\PDC\ThreeSortTasks\bin\Debug\ThreeSortTasks.pdb
+C:\Users\pc\Desktop\Учёба\ПРВ\PDC\ThreeSortTasks\obj\Debug\ThreeSortTasks.exe
+C:\Users\pc\Desktop\Учёба\ПРВ\PDC\ThreeSortTasks\obj\Debug\ThreeSortTasks.pdb
