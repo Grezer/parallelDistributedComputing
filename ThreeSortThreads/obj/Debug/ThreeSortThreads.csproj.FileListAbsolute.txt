@@ -18,13 +18,3 @@ C:\Users\Grezer\Desktop\Доделать\ПРВ\parallelDistributedComputing\Thr
 C:\Users\Grezer\Desktop\Доделать\ПРВ\parallelDistributedComputing\ThreeSortThreads\obj\Debug\ThreeSortThreads.csproj.CoreCompileInputs.cache
 C:\Users\Grezer\Desktop\Доделать\ПРВ\parallelDistributedComputing\ThreeSortThreads\obj\Debug\ThreeSortThreads.exe
 C:\Users\Grezer\Desktop\Доделать\ПРВ\parallelDistributedComputing\ThreeSortThreads\obj\Debug\ThreeSortThreads.pdb
-C:\Users\pc\Desktop\Учёба\ПРВ\PDC\ThreeSortThreads\bin\Debug\ThreeSortThreads.exe.config
-C:\Users\pc\Desktop\Учёба\ПРВ\PDC\ThreeSortThreads\bin\Debug\ThreeSortThreads.exe
-C:\Users\pc\Desktop\Учёба\ПРВ\PDC\ThreeSortThreads\bin\Debug\ThreeSortThreads.pdb
-C:\Users\pc\Desktop\Учёба\ПРВ\PDC\ThreeSortThreads\obj\Debug\ThreeSortThreads.csprojAssemblyReference.cache
-C:\Users\pc\Desktop\Учёба\ПРВ\PDC\ThreeSortThreads\obj\Debug\ThreeSortThreads.Form1.resources
-C:\Users\pc\Desktop\Учёба\ПРВ\PDC\ThreeSortThreads\obj\Debug\ThreeSortThreads.Properties.Resources.resources
-C:\Users\pc\Desktop\Учёба\ПРВ\PDC\ThreeSortThreads\obj\Debug\ThreeSortThreads.csproj.GenerateResource.cache
-C:\Users\pc\Desktop\Учёба\ПРВ\PDC\ThreeSortThreads\obj\Debug\ThreeSortThreads.csproj.CoreCompileInputs.cache
-C:\Users\pc\Desktop\Учёба\ПРВ\PDC\ThreeSortThreads\obj\Debug\ThreeSortThreads.exe
-C:\Users\pc\Desktop\Учёба\ПРВ\PDC\ThreeSortThreads\obj\Debug\ThreeSortThreads.pdb

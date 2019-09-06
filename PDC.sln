@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.29102.190
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThreeSortThreads", "ThreeSortThreads\ThreeSortThreads.csproj", "{9E1CBCEC-05AE-4E2B-AE8D-19D6652ABCB8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThreeSortTasks", "ThreeSortTasks\ThreeSortTasks.csproj", "{2AA6EEA4-F722-49B9-9743-738239C69640}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThreeSortTasks", "ThreeSortTasks\ThreeSortTasks.csproj", "{2E5511FE-186A-410A-8E00-4235C3B3F5DF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{9E1CBCEC-05AE-4E2B-AE8D-19D6652ABCB8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9E1CBCEC-05AE-4E2B-AE8D-19D6652ABCB8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9E1CBCEC-05AE-4E2B-AE8D-19D6652ABCB8}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2AA6EEA4-F722-49B9-9743-738239C69640}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2AA6EEA4-F722-49B9-9743-738239C69640}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2AA6EEA4-F722-49B9-9743-738239C69640}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2AA6EEA4-F722-49B9-9743-738239C69640}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2E5511FE-186A-410A-8E00-4235C3B3F5DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2E5511FE-186A-410A-8E00-4235C3B3F5DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2E5511FE-186A-410A-8E00-4235C3B3F5DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2E5511FE-186A-410A-8E00-4235C3B3F5DF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

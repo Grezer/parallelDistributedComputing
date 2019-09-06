@@ -31,7 +31,7 @@ namespace ThreeSortThreads
         private void ButtonGenerate_Click(object sender, EventArgs e)
         {
             /*
-             * Быстрый костыль, что бы не париться с sharedMemory
+             * Быстрый костыль, что бы не париться с взаимодействием потоков
              * Ходят легенды, что за такое руки отрывают ¯\_(ツ)_/¯
             */
             System.Windows.Forms.Control.CheckForIllegalCrossThreadCalls = false;

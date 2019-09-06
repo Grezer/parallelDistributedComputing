@@ -5,14 +5,14 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
-using System.Windows.Forms;
 using System.Threading;
+using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace ThreeSortTasks
 {
     public partial class Form1 : Form
     {
-
         int[] unsortedArray;
         public Form1()
         {
@@ -30,22 +30,11 @@ namespace ThreeSortTasks
         private void ButtonGenerate_Click(object sender, EventArgs e)
         {
             /*
-             * Быстрый костыль, что бы не париться с sharedMemory
-             * Ходят легенды, что за такое руки отрывают ¯\_(ツ)_/¯
-            */
+            * Быстрый костыль, что бы не париться с взаимодействием потоков
+            * Ходят легенды, что за такое руки отрывают ¯\_(ツ)_/¯
+           */
             System.Windows.Forms.Control.CheckForIllegalCrossThreadCalls = false;
-            /* А вот так правильно:
-             * Invoke вызывает делегат синхронно, BeginInvoke - асинхронно
-             * 
-             * delegate void Del(string text);             
-             * textBox1.Invoke(new Del((s) => textBox1.Text = s), "newText");             
-             * void SetTextSafe(string newText)
-             * {
-             *      if (textBox1.InvokeRequired) textBox1.Invoke(new Action<string>((s) => textBox1.Text = s), newText);
-             *      else textBox1.Text = newText;
-             * }
-             * Ну или через Task, но это уже совсем другая история :)
-             */
+
             Random rnd = new Random();
             uint sizeArray;
             if (uint.TryParse(comboBoxCount.Text, out sizeArray))
@@ -65,18 +54,33 @@ namespace ThreeSortTasks
             labelBubbleSort.Text = "";
             labelShellSort.Text = "";
             labelQuickSort.Text = "";
-            Thread threadBubbleSort = new Thread(new ParameterizedThreadStart(bubbleSort));
-            Thread threadShellSort = new Thread(new ParameterizedThreadStart(shellSort));
-            Thread threadQuickSort = new Thread(new ParameterizedThreadStart(quickSort));
-            threadBubbleSort.Start(unsortedArray);
-            threadShellSort.Start(unsortedArray);
-            threadQuickSort.Start(unsortedArray);
-        }
 
+            /*
+                Можно запихнуть тело метода прямо в deligate, но тогда это будет не читаемый кошмар
+                Поэтому сделал так
+            */
+            Action<object> bubbleSortDel = bubbleSort;
+            Action<object> shellSortDel = shellSort;
+            Action<object> quickSortDel = quickSort;
+            bubbleSortDel.BeginInvoke(unsortedArray, bubbleSortDel.EndInvoke, unsortedArray);
+            shellSortDel.BeginInvoke(unsortedArray, shellSortDel.EndInvoke, unsortedArray);
+            quickSortDel.BeginInvoke(unsortedArray, quickSortDel.EndInvoke, unsortedArray);
+
+            /*
+                Вариант через Task
+                Все три метода должны возвращать string
+            */            
+            //var taskBubble = Task<string>.Factory.StartNew(() => bubbleSort(unsortedArray));            
+            //var taskShell = Task<string>.Factory.StartNew(() => shellSort(unsortedArray));
+            //var taskQuick = Task<string>.Factory.StartNew(() => quickSort(unsortedArray));
+            //taskBubble.ContinueWith(x => labelBubbleSort.Text = taskBubble.Result);
+            //taskShell.ContinueWith(x => labelShellSort.Text = taskShell.Result);
+            //taskQuick.ContinueWith(x => labelQuickSort.Text = taskQuick.Result);
+        }
         private void bubbleSort(object unsortedArray)
         {
             var Sort = new bubbleSort();
-            var result = Sort.startSorting((int[])unsortedArray);
+            Sort.startSorting((int[])unsortedArray);
             labelBubbleSort.Text = "Bubble sort:" +
                                     System.Environment.NewLine +
                                     "Iterations: " + Sort.countIteration +
@@ -89,7 +93,7 @@ namespace ThreeSortTasks
         private void shellSort(object unsortedArray)
         {
             var Sort = new shellSort();
-            var result = Sort.startSorting((int[])unsortedArray);
+            Sort.startSorting((int[])unsortedArray);
             labelShellSort.Text = "Shell sort:" +
                                     System.Environment.NewLine +
                                     "Iterations: " + Sort.countIteration +
@@ -101,7 +105,7 @@ namespace ThreeSortTasks
         private void quickSort(object unsortedArray)
         {
             var Sort = new quickSort();
-            var result = Sort.startSorting((int[])unsortedArray);
+            Sort.startSorting((int[])unsortedArray);
             labelQuickSort.Text = "Quick sort:" +
                                     System.Environment.NewLine +
                                     "Iterations: " + Sort.countIteration +

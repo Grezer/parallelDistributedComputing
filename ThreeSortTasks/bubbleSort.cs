@@ -1,5 +1,4 @@
 ﻿using System.Diagnostics;
-
 namespace ThreeSortTasks
 {    public class bubbleSort
     {

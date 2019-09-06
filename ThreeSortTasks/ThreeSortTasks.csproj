@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{2AA6EEA4-F722-49B9-9743-738239C69640}</ProjectGuid>
+    <ProjectGuid>{2E5511FE-186A-410A-8E00-4235C3B3F5DF}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>ThreeSortTasks</RootNamespace>
     <AssemblyName>ThreeSortTasks</AssemblyName>
