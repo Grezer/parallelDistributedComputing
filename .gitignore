@@ -1,0 +1,6 @@
+
+*.cache
+
+.vs/PDC/v16/Server/sqlite3/storage.ide
+
+.vs/PDC/v16/.suo
