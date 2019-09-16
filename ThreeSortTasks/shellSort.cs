@@ -1,8 +1,16 @@
 ﻿using System.Diagnostics;
+using System.Windows.Forms;
+
 namespace ThreeSortTasks
 {
     class shellSort
     {
+        Panel _panel;
+        public shellSort(Panel panel)
+        {
+            _panel = panel;
+        }
+
         public ulong countIteration = 0;
         public ulong countChanges = 0;
         public Stopwatch stopWatch = new Stopwatch();
@@ -37,6 +45,11 @@ namespace ThreeSortTasks
             }
             stopWatch.Stop();
             return sortedArray;
+        }
+
+        public static void tryStart()
+        {
+            
         }
     }
 }

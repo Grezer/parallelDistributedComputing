@@ -88,11 +88,13 @@ namespace ThreeSortTasks
                                     "Changes: " + Sort.countChanges +
                                     System.Environment.NewLine +
                                     "Total ticks: " + Sort.stopWatch.ElapsedTicks;
+            
         }
-
+        
         private void shellSort(object unsortedArray)
         {
-            var Sort = new shellSort();
+            
+            var Sort = new shellSort(panel1);
             Sort.startSorting((int[])unsortedArray);
             labelShellSort.Text = "Shell sort:" +
                                     System.Environment.NewLine +
