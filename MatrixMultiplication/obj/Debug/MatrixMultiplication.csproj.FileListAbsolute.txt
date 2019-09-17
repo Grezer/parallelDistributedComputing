@@ -8,3 +8,13 @@ C:\Users\Grezer\Desktop\Доделать\ПРВ\parallelDistributedComputing\Mat
 C:\Users\Grezer\Desktop\Доделать\ПРВ\parallelDistributedComputing\MatrixMultiplication\obj\Debug\MatrixMultiplication.csproj.CoreCompileInputs.cache
 C:\Users\Grezer\Desktop\Доделать\ПРВ\parallelDistributedComputing\MatrixMultiplication\obj\Debug\MatrixMultiplication.exe
 C:\Users\Grezer\Desktop\Доделать\ПРВ\parallelDistributedComputing\MatrixMultiplication\obj\Debug\MatrixMultiplication.pdb
+C:\Users\pc\Desktop\Учёба\ПРВ\PDC\MatrixMultiplication\obj\Debug\MatrixMultiplication.csprojAssemblyReference.cache
+C:\Users\pc\Desktop\Учёба\ПРВ\PDC\MatrixMultiplication\obj\Debug\MatrixMultiplication.Form1.resources
+C:\Users\pc\Desktop\Учёба\ПРВ\PDC\MatrixMultiplication\obj\Debug\MatrixMultiplication.Properties.Resources.resources
+C:\Users\pc\Desktop\Учёба\ПРВ\PDC\MatrixMultiplication\obj\Debug\MatrixMultiplication.csproj.GenerateResource.cache
+C:\Users\pc\Desktop\Учёба\ПРВ\PDC\MatrixMultiplication\obj\Debug\MatrixMultiplication.csproj.CoreCompileInputs.cache
+C:\Users\pc\Desktop\Учёба\ПРВ\PDC\MatrixMultiplication\obj\Debug\MatrixMultiplication.exe
+C:\Users\pc\Desktop\Учёба\ПРВ\PDC\MatrixMultiplication\obj\Debug\MatrixMultiplication.pdb
+C:\Users\pc\Desktop\Учёба\ПРВ\PDC\MatrixMultiplication\bin\Debug\MatrixMultiplication.exe.config
+C:\Users\pc\Desktop\Учёба\ПРВ\PDC\MatrixMultiplication\bin\Debug\MatrixMultiplication.exe
+C:\Users\pc\Desktop\Учёба\ПРВ\PDC\MatrixMultiplication\bin\Debug\MatrixMultiplication.pdb
