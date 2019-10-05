@@ -63,28 +63,37 @@ namespace ThreeSortThreads
 
         private void ButtonStartSort_Click(object sender, EventArgs e)
         {
+            bubbleSort BS = new bubbleSort();
+            BS.bs_progressBar += changeProgressBar;
+            BS.bs_finished += bs_finished;
+            Thread thread = new Thread(() => BS.startSorting(unsortedArray));
+            thread.Start();
+            
+
+
             labelBubbleSort.Text = "";
             labelShellSort.Text = "";
             labelQuickSort.Text = "";
-            Thread threadBubbleSort = new Thread(new ParameterizedThreadStart(bubbleSort));
-            Thread threadShellSort = new Thread(new ParameterizedThreadStart(shellSort));
-            Thread threadQuickSort = new Thread(new ParameterizedThreadStart(quickSort));
-            threadBubbleSort.Start(unsortedArray);
-            threadShellSort.Start(unsortedArray);
-            threadQuickSort.Start(unsortedArray);
+            //Thread threadBubbleSort = new Thread(new ParameterizedThreadStart(bubbleSort));
+            //Thread threadShellSort = new Thread(new ParameterizedThreadStart(shellSort));
+            //Thread threadQuickSort = new Thread(new ParameterizedThreadStart(quickSort));
+            //threadBubbleSort.Start(unsortedArray);
+            //threadShellSort.Start(unsortedArray);
+            //threadQuickSort.Start(unsortedArray);
         }
 
         private void bubbleSort(object unsortedArray)
         {
-            var Sort = new bubbleSort();
-            var result = Sort.startSorting((int[])unsortedArray);
-            labelBubbleSort.Text = "Bubble sort:" +
-                                    System.Environment.NewLine +
-                                    "Iterations: " + Sort.countIteration +
-                                    System.Environment.NewLine +
-                                    "Changes: " + Sort.countChanges +
-                                    System.Environment.NewLine +
-                                    "Total ticks: " + Sort.stopWatch.ElapsedTicks;
+            //var Sort = new bubbleSort();
+            //Sort.bs_progressBar += changeProgressBar;
+            //var result = Sort.startSorting((int[])unsortedArray);
+            //labelBubbleSort.Text = "Bubble sort:" +
+            //                        System.Environment.NewLine +
+            //                        "Iterations: " + Sort.countIteration +
+            //                        System.Environment.NewLine +
+            //                        "Changes: " + Sort.countChanges +
+            //                        System.Environment.NewLine +
+            //                        "Total ticks: " + Sort.stopWatch.ElapsedTicks;
         }
 
         private void shellSort(object unsortedArray)
@@ -110,6 +119,17 @@ namespace ThreeSortThreads
                                     "Changes: " + Sort.countChanges +
                                     System.Environment.NewLine +
                                     "Total ticks: " + Sort.stopWatch.ElapsedTicks;
+        }
+
+        private void changeProgressBar(int progress)
+        {
+            Action action = () => { progressBar1.Value = progress; };
+            Invoke(action);
+        }
+        private void bs_finished(string info)
+        {
+            Action action = () => { labelBubbleSort.Text = info; };
+            Invoke(action);
         }
     }
 }
