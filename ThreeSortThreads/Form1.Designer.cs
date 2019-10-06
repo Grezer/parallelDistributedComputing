@@ -36,6 +36,8 @@
             this.labelShellSort = new System.Windows.Forms.Label();
             this.labelQuickSort = new System.Windows.Forms.Label();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.progressBar2 = new System.Windows.Forms.ProgressBar();
+            this.progressBar3 = new System.Windows.Forms.ProgressBar();
             this.SuspendLayout();
             // 
             // buttonGenerate
@@ -83,10 +85,22 @@
             resources.ApplyResources(this.progressBar1, "progressBar1");
             this.progressBar1.Name = "progressBar1";
             // 
+            // progressBar2
+            // 
+            resources.ApplyResources(this.progressBar2, "progressBar2");
+            this.progressBar2.Name = "progressBar2";
+            // 
+            // progressBar3
+            // 
+            resources.ApplyResources(this.progressBar3, "progressBar3");
+            this.progressBar3.Name = "progressBar3";
+            // 
             // Form1
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.progressBar3);
+            this.Controls.Add(this.progressBar2);
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.labelQuickSort);
             this.Controls.Add(this.labelShellSort);
@@ -110,6 +124,8 @@
         private System.Windows.Forms.Label labelShellSort;
         private System.Windows.Forms.Label labelQuickSort;
         private System.Windows.Forms.ProgressBar progressBar1;
+        private System.Windows.Forms.ProgressBar progressBar2;
+        private System.Windows.Forms.ProgressBar progressBar3;
     }
 }
 

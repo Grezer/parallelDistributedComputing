@@ -56,6 +56,9 @@ namespace ThreeSortThreads
             }
             else
                 buttonStartSort.Enabled = false;
+            progressBar1.Value = 0;
+            progressBar2.Value = 0;
+            progressBar3.Value = 0;
             labelBubbleSort.Text = "";
             labelShellSort.Text = "";
             labelQuickSort.Text = "";
@@ -64,16 +67,24 @@ namespace ThreeSortThreads
         private void ButtonStartSort_Click(object sender, EventArgs e)
         {
             bubbleSort BS = new bubbleSort();
-            BS.bs_progressBar += changeProgressBar;
+            BS.bs_progressBar += changeProgressBarBubble;
             BS.bs_finished += bs_finished;
-            Thread thread = new Thread(() => BS.startSorting(unsortedArray));
-            thread.Start();
-            
+            Thread threadBubble = new Thread(() => BS.startSorting(unsortedArray));
 
+            shellSort SS = new shellSort();
+            SS.ss_progressBar += changeProgressBarShell;
+            SS.ss_finished += ss_finished;
+            Thread threadShell = new Thread(() => SS.startSorting(unsortedArray));            
 
-            labelBubbleSort.Text = "";
-            labelShellSort.Text = "";
-            labelQuickSort.Text = "";
+            quickSort QS = new quickSort();
+            QS.qs_progressBar += changeProgressBarQuick;
+            QS.qs_finished += qs_finished;
+            Thread threadQuick = new Thread(() => QS.startSorting(unsortedArray));        
+
+            threadShell.Start();
+            threadBubble.Start();
+            threadQuick.Start();
+
             //Thread threadBubbleSort = new Thread(new ParameterizedThreadStart(bubbleSort));
             //Thread threadShellSort = new Thread(new ParameterizedThreadStart(shellSort));
             //Thread threadQuickSort = new Thread(new ParameterizedThreadStart(quickSort));
@@ -99,7 +110,7 @@ namespace ThreeSortThreads
         private void shellSort(object unsortedArray)
         {
             var Sort = new shellSort();
-            var result = Sort.startSorting((int[])unsortedArray);
+            Sort.startSorting((int[])unsortedArray);
             labelShellSort.Text = "Shell sort:" +
                                     System.Environment.NewLine +
                                     "Iterations: " + Sort.countIteration +
@@ -111,7 +122,7 @@ namespace ThreeSortThreads
         private void quickSort(object unsortedArray)
         {
             var Sort = new quickSort();
-            var result = Sort.startSorting((int[])unsortedArray);
+            Sort.startSorting((int[])unsortedArray);
             labelQuickSort.Text = "Quick sort:" +
                                     System.Environment.NewLine +
                                     "Iterations: " + Sort.countIteration +
@@ -121,7 +132,7 @@ namespace ThreeSortThreads
                                     "Total ticks: " + Sort.stopWatch.ElapsedTicks;
         }
 
-        private void changeProgressBar(int progress)
+        private void changeProgressBarBubble(int progress)
         {
             Action action = () => { progressBar1.Value = progress; };
             Invoke(action);
@@ -129,6 +140,28 @@ namespace ThreeSortThreads
         private void bs_finished(string info)
         {
             Action action = () => { labelBubbleSort.Text = info; };
+            Invoke(action);
+        }
+
+        private void changeProgressBarShell(int progress)
+        {
+            Action action = () => { progressBar2.Value = progress; };
+            Invoke(action);
+        }
+        private void ss_finished(string info)
+        {
+            Action action = () => { labelShellSort.Text = info; };
+            Invoke(action);
+        }
+
+        private void changeProgressBarQuick(int progress)
+        {
+            Action action = () => { progressBar3.Value = progress; };
+            Invoke(action);
+        }
+        private void qs_finished(string info)
+        {
+            Action action = () => { labelQuickSort.Text = info; };
             Invoke(action);
         }
     }
