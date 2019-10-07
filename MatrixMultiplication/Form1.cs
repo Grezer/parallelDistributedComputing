@@ -69,30 +69,30 @@ namespace MatrixMultiplication
                     }
                 }
 
-            totalTimeLabel.Text = "";
-            Stopwatch stopWatch = new Stopwatch();
-            if (radioButton2.Checked)
+            totalTimeLabel.Text = ""; //label для отображения времени
+            Stopwatch stopWatch = new Stopwatch(); //таймер (считает не в секундах а в тиках процессора)
+            if (radioButton2.Checked) // если мы считаем через таски
             {                               
-                Task[] tasks = new Task[matrixSize];
-                for (int t = 0; t < matrixSize; t++)
+                Task[] tasks = new Task[matrixSize]; // создание массива тасков (для матрицы 5x5 matrixSize=5)
+                for (int t = 0; t < matrixSize; t++) //для каждой строчки в матрице
                 {
-                    var multiplicacion = new Task((param) =>
+                    // создание таска, у него есть входной параметр param (туда передаём t которая в цикле выше см. строчку 87)
+                    var multiplicacion = new Task((param) => 
                     {
-                        int iStatic = (int)param;
-                        for (int nString = 0; nString < matrixSize; nString++)
+                        int iStatic = (int)param; //параметр у нас это № строки для которой мы будем считать
+                        for (int nString = 0; nString < matrixSize; nString++) //цикл для ячеек в строке по которой идём (в результирующей матрице)
                             for (int i = 0; i < matrixSize; i++)
-                                resultMatrix[(int)param, nString] += firstMatrix[iStatic, i] * secondMatrix[i, nString];
+                                resultMatrix[iStatic, nString] += firstMatrix[iStatic, i] * secondMatrix[i, nString];
+                        //индексы скопируй по аналогии. resultMatrix - результат                         
                     }, t);
-                    tasks[t] = multiplicacion;
+                    tasks[t] = multiplicacion; //пихаем таск в массив
                 }
-
-                //Запуск всех тасков
-                stopWatch.Start();
-                foreach (var item in tasks)
-                    item.Start();
-                Task.WaitAll(tasks);
-                stopWatch.Stop();
-                totalTimeLabel.Text = "Total ticks: " + stopWatch.ElapsedTicks;
+                stopWatch.Start(); // стартуем часики 
+                foreach (var item in tasks) // для всех тасков в массиве
+                    item.Start(); //стартуем
+                Task.WaitAll(tasks); // ждём когда все доработают
+                stopWatch.Stop(); // стоп часики 
+                totalTimeLabel.Text = "Total ticks: " + stopWatch.ElapsedTicks; // пишем сколько прошло                
             }
             else
             {
@@ -105,9 +105,6 @@ namespace MatrixMultiplication
                 totalTimeLabel.Text = "Total ticks: " + stopWatch.ElapsedTicks;
             }
 
-            
-
-            //Отображение результатов
             for (int i = 0; i < showMatrixSize; i++)
                 for (int j = 0; j < showMatrixSize; j++)
                     resMatrixLabels[i, j].Text = resultMatrix[i, j].ToString();
