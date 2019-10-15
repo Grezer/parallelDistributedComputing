@@ -12,7 +12,6 @@ C:\Users\pc\Desktop\Учёба\ПРВ\PDC\MatrixMultiplication\obj\Debug\MatrixM
 C:\Users\pc\Desktop\Учёба\ПРВ\PDC\MatrixMultiplication\obj\Debug\MatrixMultiplication.Form1.resources
 C:\Users\pc\Desktop\Учёба\ПРВ\PDC\MatrixMultiplication\obj\Debug\MatrixMultiplication.Properties.Resources.resources
 C:\Users\pc\Desktop\Учёба\ПРВ\PDC\MatrixMultiplication\obj\Debug\MatrixMultiplication.csproj.GenerateResource.cache
-C:\Users\pc\Desktop\Учёба\ПРВ\PDC\MatrixMultiplication\obj\Debug\MatrixMultiplication.csproj.CoreCompileInputs.cache
 C:\Users\pc\Desktop\Учёба\ПРВ\PDC\MatrixMultiplication\obj\Debug\MatrixMultiplication.exe
 C:\Users\pc\Desktop\Учёба\ПРВ\PDC\MatrixMultiplication\obj\Debug\MatrixMultiplication.pdb
 C:\Users\pc\Desktop\Учёба\ПРВ\PDC\MatrixMultiplication\bin\Debug\MatrixMultiplication.exe.config
