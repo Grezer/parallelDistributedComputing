@@ -16,12 +16,10 @@ namespace Chat_client
     public partial class Form1 : Form
     {
         Graphics g;
-        Pen pen;
-        int old_x = -1, old_y = -1;
+        Brush brush = Brushes.Black;
         public Form1()
         {
             InitializeComponent();
-            pen = new Pen(Color.Black);
             g = pictureBox1.CreateGraphics();
         }
 
@@ -46,7 +44,7 @@ namespace Chat_client
                 Thread reading = new Thread(ReadMessage);
                 reading.Start();
                 textBox1.Enabled = button1.Enabled = false;
-                textBox2.Enabled = button2.Enabled = listBox1.Enabled = true;
+                textBox2.Enabled = button2.Enabled = pictureBox1.Enabled = true;
             }
             else MessageBox.Show("Введите имя пользователя!");
         }
@@ -63,22 +61,11 @@ namespace Chat_client
             Socket.Send(Encoding.GetEncoding(1251).GetBytes(message));
         }
 
-        private void pictureBox1_MouseUp(object sender, MouseEventArgs e)
-        {
-            old_x = -1;
-            old_y = -1;
-        }
-
         private void pictureBox1_MouseMove(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
             {
-                if (old_x < 0 || old_y < 0)
-                {
-                    old_x = e.X;
-                    old_y = e.Y;
-                }
-                WriteMessage(string.Format("~{0},{1},{2},{3}", old_x, old_y, e.X, e.Y));
+                WriteMessage(string.Format("~{0},{1}", e.X, e.Y));
             }
         }
 
@@ -98,9 +85,8 @@ namespace Chat_client
                             int[] int_coords = new int[str_coords.Length];
                             for (int i = 0; i < str_coords.Length; i++)
                                 int_coords[i] = Convert.ToInt32(str_coords[i]);
-                            g.DrawLine(pen, int_coords[0], int_coords[1], int_coords[2], int_coords[3]);
-                            old_x = int_coords[2];
-                            old_y = int_coords[3];
+                            g.FillRectangle(brush, int_coords[0], int_coords[1], 1, 1);
+                            
                         }
                     else listBox1.BeginInvoke((MethodInvoker)(() => listBox1.Items.Add(msg)));
 
