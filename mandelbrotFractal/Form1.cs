@@ -51,6 +51,7 @@ namespace mandelbrotFractal
             }
             foreach (var item in tasks)            
                 item.Start();
+            Task.WaitAll(tasks);
 
             for (int i = 0; i < pictureBox1.Height; i++)            
                 for (int j = 0; j < pictureBox1.Width; j++)
@@ -123,18 +124,18 @@ namespace mandelbrotFractal
 
         private void pictureBox1_MouseMove(object sender, MouseEventArgs e)
         {
-            if(draggedNow)
-            {
-                int changeX = e.X - oldMousePosition.X;
-                int changeY = e.Y - oldMousePosition.Y;
-                for (int i = 0; i < 1000; i++)
-                    for (int j = 0; j < 1000; j++)
-                    {
-                        double part = 1000 / scale;                            
-                        Complex newCoodr = new Complex(arrayOfCoord[i, j].a + part * changeX, arrayOfCoord[i, j].b + part * changeY);
-                        arrayOfCoord[i, j] = newCoodr;
-                    }
-            }
+            //if(draggedNow)
+            //{
+            //    int changeX = e.X - oldMousePosition.X;
+            //    int changeY = e.Y - oldMousePosition.Y;
+            //    for (int i = 0; i < 1000; i++)
+            //        for (int j = 0; j < 1000; j++)
+            //        {
+            //            double part = 1000 / scale;                            
+            //            Complex newCoodr = new Complex(arrayOfCoord[i, j].a + part * changeX, arrayOfCoord[i, j].b + part * changeY);
+            //            arrayOfCoord[i, j] = newCoodr;
+            //        }
+            //}
             //change coord
         }
     }

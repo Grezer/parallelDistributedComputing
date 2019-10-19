@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mandelbrotFractal", "mandel
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MatrixMultiplication", "MatrixMultiplication\MatrixMultiplication.csproj", "{E2518A02-4DA5-4B8B-B4FC-6CAD8746EB25}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chat server", "Chat server\Chat server.csproj", "{CF0B3C1F-3AFA-4717-BF8B-2A9DED2FBFC1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chat client", "Chat client\Chat client.csproj", "{D4330241-3131-48B8-8AA6-0AFA78BFAA1A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +37,14 @@ Global
 		{E2518A02-4DA5-4B8B-B4FC-6CAD8746EB25}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E2518A02-4DA5-4B8B-B4FC-6CAD8746EB25}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E2518A02-4DA5-4B8B-B4FC-6CAD8746EB25}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CF0B3C1F-3AFA-4717-BF8B-2A9DED2FBFC1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF0B3C1F-3AFA-4717-BF8B-2A9DED2FBFC1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF0B3C1F-3AFA-4717-BF8B-2A9DED2FBFC1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF0B3C1F-3AFA-4717-BF8B-2A9DED2FBFC1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D4330241-3131-48B8-8AA6-0AFA78BFAA1A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4330241-3131-48B8-8AA6-0AFA78BFAA1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D4330241-3131-48B8-8AA6-0AFA78BFAA1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D4330241-3131-48B8-8AA6-0AFA78BFAA1A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

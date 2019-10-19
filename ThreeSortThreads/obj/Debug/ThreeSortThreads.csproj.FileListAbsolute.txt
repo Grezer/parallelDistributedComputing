@@ -15,6 +15,5 @@ C:\Users\Grezer\Desktop\Доделать\ПРВ\parallelDistributedComputing\Thr
 C:\Users\Grezer\Desktop\Доделать\ПРВ\parallelDistributedComputing\ThreeSortThreads\obj\Debug\ThreeSortThreads.Form1.resources
 C:\Users\Grezer\Desktop\Доделать\ПРВ\parallelDistributedComputing\ThreeSortThreads\obj\Debug\ThreeSortThreads.Properties.Resources.resources
 C:\Users\Grezer\Desktop\Доделать\ПРВ\parallelDistributedComputing\ThreeSortThreads\obj\Debug\ThreeSortThreads.csproj.GenerateResource.cache
-C:\Users\Grezer\Desktop\Доделать\ПРВ\parallelDistributedComputing\ThreeSortThreads\obj\Debug\ThreeSortThreads.csproj.CoreCompileInputs.cache
 C:\Users\Grezer\Desktop\Доделать\ПРВ\parallelDistributedComputing\ThreeSortThreads\obj\Debug\ThreeSortThreads.exe
 C:\Users\Grezer\Desktop\Доделать\ПРВ\parallelDistributedComputing\ThreeSortThreads\obj\Debug\ThreeSortThreads.pdb

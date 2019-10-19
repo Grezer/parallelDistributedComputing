@@ -1,0 +1,6 @@
+C:\Users\Grezer\Desktop\Доделать\ПРВ\parallelDistributedComputing\Chat server\bin\Debug\Chat server.exe.config
+C:\Users\Grezer\Desktop\Доделать\ПРВ\parallelDistributedComputing\Chat server\bin\Debug\Chat server.exe
+C:\Users\Grezer\Desktop\Доделать\ПРВ\parallelDistributedComputing\Chat server\bin\Debug\Chat server.pdb
+C:\Users\Grezer\Desktop\Доделать\ПРВ\parallelDistributedComputing\Chat server\obj\Debug\Chat server.csprojAssemblyReference.cache
+C:\Users\Grezer\Desktop\Доделать\ПРВ\parallelDistributedComputing\Chat server\obj\Debug\Chat server.exe
+C:\Users\Grezer\Desktop\Доделать\ПРВ\parallelDistributedComputing\Chat server\obj\Debug\Chat server.pdb

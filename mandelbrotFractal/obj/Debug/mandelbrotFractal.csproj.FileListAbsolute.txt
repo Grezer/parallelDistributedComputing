@@ -5,7 +5,6 @@ C:\Users\Grezer\Desktop\Доделать\ПРВ\parallelDistributedComputing\man
 C:\Users\Grezer\Desktop\Доделать\ПРВ\parallelDistributedComputing\mandelbrotFractal\obj\Debug\mandelbrotFractal.Form1.resources
 C:\Users\Grezer\Desktop\Доделать\ПРВ\parallelDistributedComputing\mandelbrotFractal\obj\Debug\mandelbrotFractal.Properties.Resources.resources
 C:\Users\Grezer\Desktop\Доделать\ПРВ\parallelDistributedComputing\mandelbrotFractal\obj\Debug\mandelbrotFractal.csproj.GenerateResource.cache
-C:\Users\Grezer\Desktop\Доделать\ПРВ\parallelDistributedComputing\mandelbrotFractal\obj\Debug\mandelbrotFractal.csproj.CoreCompileInputs.cache
 C:\Users\Grezer\Desktop\Доделать\ПРВ\parallelDistributedComputing\mandelbrotFractal\obj\Debug\mandelbrotFractal.exe
 C:\Users\Grezer\Desktop\Доделать\ПРВ\parallelDistributedComputing\mandelbrotFractal\obj\Debug\mandelbrotFractal.pdb
 C:\Users\pc\Desktop\Учёба\ПРВ\PDC\mandelbrotFractal\bin\Debug\MandelbrotFractal.exe.config

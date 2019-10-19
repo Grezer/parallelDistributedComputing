@@ -1,0 +1,9 @@
+C:\Users\Grezer\Desktop\Доделать\ПРВ\parallelDistributedComputing\Chat client\bin\Debug\Chat client.exe.config
+C:\Users\Grezer\Desktop\Доделать\ПРВ\parallelDistributedComputing\Chat client\bin\Debug\Chat client.exe
+C:\Users\Grezer\Desktop\Доделать\ПРВ\parallelDistributedComputing\Chat client\bin\Debug\Chat client.pdb
+C:\Users\Grezer\Desktop\Доделать\ПРВ\parallelDistributedComputing\Chat client\obj\Debug\Chat client.csprojAssemblyReference.cache
+C:\Users\Grezer\Desktop\Доделать\ПРВ\parallelDistributedComputing\Chat client\obj\Debug\Chat_client.Form1.resources
+C:\Users\Grezer\Desktop\Доделать\ПРВ\parallelDistributedComputing\Chat client\obj\Debug\Chat_client.Properties.Resources.resources
+C:\Users\Grezer\Desktop\Доделать\ПРВ\parallelDistributedComputing\Chat client\obj\Debug\Chat client.csproj.GenerateResource.cache
+C:\Users\Grezer\Desktop\Доделать\ПРВ\parallelDistributedComputing\Chat client\obj\Debug\Chat client.exe
+C:\Users\Grezer\Desktop\Доделать\ПРВ\parallelDistributedComputing\Chat client\obj\Debug\Chat client.pdb
