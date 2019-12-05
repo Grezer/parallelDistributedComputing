@@ -13,12 +13,11 @@ namespace mandelbrotFractal
 {
     public partial class Form1 : Form
     {
-        bool draggedNow = false;
-        Point leftAnglePosition;
-        double scale = 2;
-        Point oldMousePosition;
         int[,] arrayOfDepths = new int[1000, 1000];
         Complex[,] arrayOfCoord = new Complex[1000, 1000];
+        Point startPoint, finishPoint;
+        bool mousePressed;
+        Bitmap bm = new Bitmap(600, 600);
 
         public Form1()
         {
@@ -29,15 +28,9 @@ namespace mandelbrotFractal
         {
             
         }
-        
-        public void redraw()
-        {
-
-        }
 
         private void Form1_Shown(object sender, EventArgs e)
         {
-            Bitmap bm = new Bitmap(1000, 1000);
             startArrayOfCoord();
             Task[] tasks = new Task[4];
             for (int i = 0; i < 4; i++)
@@ -56,29 +49,6 @@ namespace mandelbrotFractal
             for (int i = 0; i < pictureBox1.Height; i++)            
                 for (int j = 0; j < pictureBox1.Width; j++)
                     bm.SetPixel(i, j, Color.FromArgb(arrayOfDepths[i, j], arrayOfDepths[i, j], arrayOfDepths[i, j]));
-
-            /*
-            for (int x = 0; x < pictureBox1.Width; x++)
-            {
-                for (int y = 0; y < pictureBox1.Height; y++)
-                {
-                    double a = (double)(x - (pictureBox1.Width / 2)) / (double)(pictureBox1.Width / 4);
-                    double b = (double)(y - (pictureBox1.Height / 2)) / (double)(pictureBox1.Height / 4);
-                    Complex c = new Complex(a, b);
-                    Complex z = new Complex(0, 0);
-                    int it = 0;
-                    do
-                    {
-                        it++;
-                        z.Square();
-                        z += c;
-                        if (z.Magnitude() > 2.0)
-                            break;
-                    } while (it < 100);
-                    bm.SetPixel(x, y, it < 100 ? Color.Black : Color.White);
-                }
-            }
-            */
             pictureBox1.Image = bm;
         }
 
@@ -115,28 +85,27 @@ namespace mandelbrotFractal
 
         private void pictureBox1_MouseUp(object sender, MouseEventArgs e)
         {
-            draggedNow = false;
+            mousePressed = false;
         }
         private void pictureBox1_MouseDown(object sender, MouseEventArgs e)
         {
-            draggedNow = true;
+            //draggedNow = true;
+            //bm.SetPixel(e.X, e.Y, Color.FromArgb(255, 0, 0));
+            //pictureBox1.Image = bm;
+            mousePressed = true;
+            startPoint = new Point(e.X, e.Y);
         }
 
         private void pictureBox1_MouseMove(object sender, MouseEventArgs e)
         {
-            //if(draggedNow)
-            //{
-            //    int changeX = e.X - oldMousePosition.X;
-            //    int changeY = e.Y - oldMousePosition.Y;
-            //    for (int i = 0; i < 1000; i++)
-            //        for (int j = 0; j < 1000; j++)
-            //        {
-            //            double part = 1000 / scale;                            
-            //            Complex newCoodr = new Complex(arrayOfCoord[i, j].a + part * changeX, arrayOfCoord[i, j].b + part * changeY);
-            //            arrayOfCoord[i, j] = newCoodr;
-            //        }
-            //}
-            //change coord
+            //save minXY and maxXY
+            //if(mousePressed)
+            for (int i = 0; i < pictureBox1.Height; i++)
+                for (int j = 0; j < pictureBox1.Width; j++)
+                    bm.SetPixel(i, j, Color.FromArgb(arrayOfDepths[i, j], arrayOfDepths[i, j], arrayOfDepths[i, j]));
+            //draw 4 lines 
+            pictureBox1.Image = bm;
+
         }
     }
 }
