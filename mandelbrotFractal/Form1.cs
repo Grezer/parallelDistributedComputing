@@ -86,6 +86,7 @@ namespace mandelbrotFractal
         private void pictureBox1_MouseUp(object sender, MouseEventArgs e)
         {
             mousePressed = false;
+            finishPoint = new Point(e.X, e.Y);
         }
         private void pictureBox1_MouseDown(object sender, MouseEventArgs e)
         {
@@ -100,12 +101,27 @@ namespace mandelbrotFractal
         {
             //save minXY and maxXY
             //if(mousePressed)
+            int minX = Math.Min(startPoint.X, e.X);
+            int minY = Math.Min(startPoint.Y, e.Y);
+            int maxX = Math.Max(startPoint.X, e.X);
+            int maxY = Math.Max(startPoint.Y, e.Y);
+
+
             for (int i = 0; i < pictureBox1.Height; i++)
                 for (int j = 0; j < pictureBox1.Width; j++)
                     bm.SetPixel(i, j, Color.FromArgb(arrayOfDepths[i, j], arrayOfDepths[i, j], arrayOfDepths[i, j]));
             //draw 4 lines 
+            for (int i = minX; i < maxX; i++)
+            {
+                bm.SetPixel(i, minY, Color.Red);
+                bm.SetPixel(i, maxY, Color.Red);
+            }
+            for (int i = minX; i < maxY; i++)
+            {
+                bm.SetPixel(minX, i, Color.Red);
+                bm.SetPixel(maxX, i, Color.Red);
+            }
             pictureBox1.Image = bm;
-
         }
     }
 }
