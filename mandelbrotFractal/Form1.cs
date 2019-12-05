@@ -13,11 +13,13 @@ namespace mandelbrotFractal
 {
     public partial class Form1 : Form
     {
-        int[,] arrayOfDepths = new int[1000, 1000];
-        Complex[,] arrayOfCoord = new Complex[1000, 1000];
+        int[,] arrayOfDepths = new int[600, 600];
+        Complex[,] arrayOfCoord = new Complex[600, 600];
         Point startPoint, finishPoint;
         bool mousePressed;
         Bitmap bm = new Bitmap(600, 600);
+        Bitmap mbm = new Bitmap(600, 600);
+        int minX, maxX, minY, maxY;
 
         public Form1()
         {
@@ -31,7 +33,14 @@ namespace mandelbrotFractal
 
         private void Form1_Shown(object sender, EventArgs e)
         {
-            startArrayOfCoord();
+            Complex startMin = new Complex(-2.0, -2.0);
+            Complex startMax = new Complex(2.0, 2.0);
+            startArrayOfCoord(startMin, startMax);
+            redraw();
+        }
+
+        private void redraw()
+        {
             Task[] tasks = new Task[4];
             for (int i = 0; i < 4; i++)
             {
@@ -42,23 +51,24 @@ namespace mandelbrotFractal
                 }, i);
                 tasks[i] = counterOfDepths;
             }
-            foreach (var item in tasks)            
+            foreach (var item in tasks)
                 item.Start();
             Task.WaitAll(tasks);
 
-            for (int i = 0; i < pictureBox1.Height; i++)            
+            for (int i = 0; i < pictureBox1.Height; i++)
                 for (int j = 0; j < pictureBox1.Width; j++)
                     bm.SetPixel(i, j, Color.FromArgb(arrayOfDepths[i, j], arrayOfDepths[i, j], arrayOfDepths[i, j]));
             pictureBox1.Image = bm;
         }
 
-        public void startArrayOfCoord()
+        public void startArrayOfCoord(Complex minPoint, Complex maxPoint)
         {
+            double step = (maxPoint.a - minPoint.a) / arrayOfCoord.GetLength(0);
             for (int i = 0; i < arrayOfCoord.GetLength(0); i++)
                 for (int j = 0; j < arrayOfCoord.GetLength(1); j++)
                 {
-                    double a = (double)(i - (pictureBox1.Width / 2)) / (double)(pictureBox1.Width / 4);
-                    double b = (double)(j - (pictureBox1.Width / 2)) / (double)(pictureBox1.Width / 4);
+                    double a = (step * i) + minPoint.a;
+                    double b = (step * j) + minPoint.b;
                     arrayOfCoord[i, j] = new Complex(a, b);            
                 }
         }
@@ -83,45 +93,49 @@ namespace mandelbrotFractal
                 }
         }
 
+
         private void pictureBox1_MouseUp(object sender, MouseEventArgs e)
         {
             mousePressed = false;
             finishPoint = new Point(e.X, e.Y);
+            int range = Math.Max(maxX - minX, maxY-minY);
+            Complex minPoint = new Complex(arrayOfCoord[minX, minY].a, arrayOfCoord[minX, minY].b);
+            Complex maxPoint = new Complex(arrayOfCoord[minX + range, minY + range].a, arrayOfCoord[minX + range, minY + range].b);
+            startArrayOfCoord(minPoint, maxPoint);
+            redraw();
         }
         private void pictureBox1_MouseDown(object sender, MouseEventArgs e)
         {
-            //draggedNow = true;
-            //bm.SetPixel(e.X, e.Y, Color.FromArgb(255, 0, 0));
-            //pictureBox1.Image = bm;
+            for (int i = 0; i < pictureBox1.Height; i++)
+                for (int j = 0; j < pictureBox1.Width; j++)
+                    mbm.SetPixel(i, j, Color.FromArgb(arrayOfDepths[i, j], arrayOfDepths[i, j], arrayOfDepths[i, j]));
+
             mousePressed = true;
             startPoint = new Point(e.X, e.Y);
         }
 
         private void pictureBox1_MouseMove(object sender, MouseEventArgs e)
         {
-            //save minXY and maxXY
-            //if(mousePressed)
-            int minX = Math.Min(startPoint.X, e.X);
-            int minY = Math.Min(startPoint.Y, e.Y);
-            int maxX = Math.Max(startPoint.X, e.X);
-            int maxY = Math.Max(startPoint.Y, e.Y);
-
-
-            for (int i = 0; i < pictureBox1.Height; i++)
-                for (int j = 0; j < pictureBox1.Width; j++)
-                    bm.SetPixel(i, j, Color.FromArgb(arrayOfDepths[i, j], arrayOfDepths[i, j], arrayOfDepths[i, j]));
-            //draw 4 lines 
-            for (int i = minX; i < maxX; i++)
+            if (mousePressed)
             {
-                bm.SetPixel(i, minY, Color.Red);
-                bm.SetPixel(i, maxY, Color.Red);
+                minX = Math.Min(startPoint.X, e.X);
+                minY = Math.Min(startPoint.Y, e.Y);
+                maxX = Math.Max(startPoint.X, e.X);
+                maxY = Math.Max(startPoint.Y, e.Y);
+               
+                bm = (Bitmap)mbm.Clone();
+                for (int i = minX; i < maxX; i++)
+                {
+                    bm.SetPixel(i, minY, Color.Red);
+                    bm.SetPixel(i, maxY, Color.Red);
+                }
+                for (int i = minY; i < maxY; i++)
+                {
+                    bm.SetPixel(minX, i, Color.Red);
+                    bm.SetPixel(maxX, i, Color.Red);
+                }
+                pictureBox1.Image = bm;
             }
-            for (int i = minX; i < maxY; i++)
-            {
-                bm.SetPixel(minX, i, Color.Red);
-                bm.SetPixel(maxX, i, Color.Red);
-            }
-            pictureBox1.Image = bm;
         }
     }
 }
