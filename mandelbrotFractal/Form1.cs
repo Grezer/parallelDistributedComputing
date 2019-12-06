@@ -57,7 +57,12 @@ namespace mandelbrotFractal
 
             for (int i = 0; i < pictureBox1.Height; i++)
                 for (int j = 0; j < pictureBox1.Width; j++)
-                    bm.SetPixel(i, j, Color.FromArgb(arrayOfDepths[i, j], arrayOfDepths[i, j], arrayOfDepths[i, j]));
+                {
+                    //if(arrayOfDepths[i, j] < 200)
+                    //    bm.SetPixel(i, j, Color.FromArgb(0, 0, arrayOfDepths[i, j]));
+                    //else
+                        bm.SetPixel(i, j, Color.FromArgb(arrayOfDepths[i, j], arrayOfDepths[i, j], arrayOfDepths[i, j]));
+                }
             pictureBox1.Image = bm;
         }
 
@@ -71,6 +76,14 @@ namespace mandelbrotFractal
                     double b = (step * j) + minPoint.b;
                     arrayOfCoord[i, j] = new Complex(a, b);            
                 }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Complex startMin = new Complex(-2.0, -2.0);
+            Complex startMax = new Complex(2.0, 2.0);
+            startArrayOfCoord(startMin, startMax);
+            redraw();
         }
 
         public void getDepths(Point p) //p.X - start line, p.Y - finish line
@@ -93,7 +106,6 @@ namespace mandelbrotFractal
                 }
         }
 
-
         private void pictureBox1_MouseUp(object sender, MouseEventArgs e)
         {
             mousePressed = false;
@@ -108,7 +120,12 @@ namespace mandelbrotFractal
         {
             for (int i = 0; i < pictureBox1.Height; i++)
                 for (int j = 0; j < pictureBox1.Width; j++)
-                    mbm.SetPixel(i, j, Color.FromArgb(arrayOfDepths[i, j], arrayOfDepths[i, j], arrayOfDepths[i, j]));
+                {
+                    //if (arrayOfDepths[i, j] < 200)
+                    //    mbm.SetPixel(i, j, Color.FromArgb(0, 0, arrayOfDepths[i, j]));
+                    //else
+                        mbm.SetPixel(i, j, Color.FromArgb(arrayOfDepths[i, j], arrayOfDepths[i, j], arrayOfDepths[i, j]));
+                }
 
             mousePressed = true;
             startPoint = new Point(e.X, e.Y);
